@@ -1,4 +1,4 @@
-# .NET Core Upload de imagens
+# .NET 5 Upload de imagens
 
 Nesse repositório você tem um exemplo prático demonstrando como fazer upload de imagens utilizando o *.NET 5* e como converter essa imagem para **WebP**.
 
