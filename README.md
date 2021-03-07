@@ -9,8 +9,7 @@ Mas o que seria esse formato **WebP** ?
 
 # Fluxo do projeto
 
-O projeto foi desenvolvido com uma `controller` e uma c
-
+O projeto foi desenvolvido com uma `controller` simples e uma método POST.
 
 ```Csharp
 //Pacotes importados no projeto
