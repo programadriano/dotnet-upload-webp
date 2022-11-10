@@ -1,11 +1,10 @@
 # .NET 5 Upload de imagens
 
-Nesse repositório você tem um exemplo prático demonstrando como fazer upload de imagens utilizando o *.NET 5* e como converter essa imagem para **WebP**.
+Nesse repositório você tem um exemplo prático demonstrando como fazer upload de imagens utilizando o _.NET 5_ e como converter essa imagem para **WebP**.
 
 Mas o que seria esse formato **WebP** ?
 
-*Criado em 2010 pelo Google, o formato WebP representa imagens com a mesma qualidade em um tamanho menor. Ou seja, economiza espaço, aumenta a velocidade de uma página e não perde em qualidade. Na prática, tem como principal objetivo compactar imagens de forma mais eficiente para oferecer uma experiência mais rápida ao usuário. fonte: https://rockcontent.com/br/blog/webp/#oque* 
-
+_Criado em 2010 pelo Google, o formato WebP representa imagens com a mesma qualidade em um tamanho menor. Ou seja, economiza espaço, aumenta a velocidade de uma página e não perde em qualidade. Na prática, tem como principal objetivo compactar imagens de forma mais eficiente para oferecer uma experiência mais rápida ao usuário. fonte: https://rockcontent.com/br/blog/webp/#oque_
 
 # Fluxo do projeto
 
@@ -13,11 +12,9 @@ O projeto foi desenvolvido com uma `controller` simples e uma método POST.
 
 ```Csharp
 //Pacotes importados no projeto
-Install-Package System.Drawing.Common
-Install-Package ImageProcessor
-Install-Package ImageProcessor.Plugins.WebP
+SkiaSharp
+SkiaSharp.NativeAssets.Linux
 ```
-
 
 ```Csharp
  [HttpPost]

@@ -1,9 +1,8 @@
-﻿using ImageProcessor;
-using ImageProcessor.Plugins.WebP.Imaging.Formats;
+﻿
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Hosting;
 using System;
+using SkiaSharp;
 using System.IO;
 
 namespace API.Controllers
@@ -11,7 +10,7 @@ namespace API.Controllers
     [ApiController]
     [Route("[controller]")]
     public class UploadsController : ControllerBase
-    {     
+    {
 
         [HttpPost]
         public IActionResult Index(IFormFile image)
@@ -30,13 +29,10 @@ namespace API.Controllers
                 // Salvando no formato WebP
                 using (var webPFileStream = new FileStream(Path.Combine("Imagens", Guid.NewGuid() + ".webp"), FileMode.Create))
                 {
-                    using (ImageFactory imageFactory = new ImageFactory(preserveExifData: false))
-                    {
-                        imageFactory.Load(image.OpenReadStream()) //carregando os dados da imagem
-                                    .Format(new WebPFormat()) //formato
-                                    .Quality(100) //parametro para não perder a qualidade no momento da compressão
-                                    .Save(webPFileStream); //salvando a imagem
-                    }
+
+                    SKBitmap.Decode(image.OpenReadStream()).Encode(SKEncodedImageFormat.Webp, 80).SaveTo(webPFileStream);
+
+
                 }
 
                 return Ok("Imagem salva com sucesso!");
